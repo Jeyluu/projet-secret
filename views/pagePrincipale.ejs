@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+    <!-- Block pour l'introduction du blog -->
+    <div class="container">
+        <section class="introduction">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="titre-intro">
+                        <h1>Introduction de notre site</h1>
+                    </div>
+                    <div class="presentation-intro">
+                        <p>Bienvenue sur notre blog concernant le gaming.<br>
+                            Sachez que tous les articles qui sont postés sont soumis à des tests par nos testeurs de
+                            jeux
+                            qui sont passionnés de jeu mais aussi de nouvelles expériences dans le gaming.
+                            C'est pourquoi nos articles sont crédibles et très souvent cités dans les médias gaming.<br>
+                            Notre equipe que votre expérience sera plaisante et que nos articles vous aiderons à faire
+                            votre
+                            choix de jeu.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Block pour les cartes de catégories -->
+        <section class="categorie-jeu">
+            <div class="row">
+
+                <% categories.forEach(function(categorie) {%> 
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="<%= categorie.image %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-text"><%= categorie.categorie %></h4>
+                            <p><%= categorie.description %></p>
+                        </div>
+                    </div>
+                </div>
+                <%})%> 
+
+            </div>
+        </section>
+    </div>
+
+    <%- include('partials/footer') %>

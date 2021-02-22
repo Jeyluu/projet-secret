@@ -6,20 +6,19 @@ const util = require('util');
 const flash = require('connect-flash');
 const session = require('express-session');
 const MySQLsession = require('express-mysql-session');
+const fileUpload = require('express-fileupload')
 //***** port *****//
 const port = 3001;
-
-//***** dotenv *****//
-require('dotenv').config()
 
 //***** express *****//
 const app = express();
 
+//***** dotenv *****//
+require('dotenv').config()
+
+
 //***** override *****//
 app.use(methodOverride('_method'))
-
-//***** mysql - session *****//
-var sessionStore = new MySQLsession({}, db)
 
 //***** mysql *****//
 const db = mysql.createConnection(
@@ -44,6 +43,9 @@ db.connect(
 //***** declare la variable mysql *****//
 global.querysql = util.promisify(db.query).bind(db)
 
+//***** mysql - session *****//
+var sessionStore = new MySQLsession({}, db)
+
 //***** express-session *****//
 
 app.use(session({
@@ -67,11 +69,19 @@ app.use(express.urlencoded({ extended: false }))
 //***** ejs *****//
 app.set('view engine', 'ejs');
 
+//***** fileupload *****//
+app.use(fileUpload());
+
 //***** dossier static public *****//
 app.use(express.static(path.join(__dirname, 'public')));
 
 
 // ------------------------------------------- Chargement des routes -------------------------------------------//
+//Chargement des routes
+const pagePrincipale = require('./routes/routePagePrincipale')
+
+//application du controller
+app.use('/',pagePrincipale) // il faut laisser cette ligne en dernier dans les controllers
 
 //***** ecoute du port *****//
 app.listen(port, () => {
