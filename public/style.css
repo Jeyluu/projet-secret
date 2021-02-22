@@ -6,6 +6,10 @@
     
 }
 
+.carte{
+    text-decoration: none;
+}
+
 .navbar-brand{
     color: #fff;
 }
