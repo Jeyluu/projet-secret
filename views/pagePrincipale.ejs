@@ -1,11 +1,11 @@
 <%- include('partials/header') %>
     <!-- Block pour l'introduction du blog -->
     <div class="container">
-        <section class="introduction">
-            <div class="row">
+        <section class="introduction mb-5 ">
+            <div class="row ">
 
-                <div class="col-md-12">
-                    <div class="titre-intro">
+                <div class="col-md-9">
+                    <div class="titre-intro ">
                         <h1>Introduction de notre site</h1>
                     </div>
                     <div class="presentation-intro">
@@ -25,15 +25,15 @@
 
         <!-- Block pour les cartes de catégories -->
         <section class="categorie-jeu">
-            <div class="row">
+            <div class="row ">
 
                 <% categories.forEach(function(categorie) {%> 
-                <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="<%= categorie.image %>" class="card-img-top" alt="...">
+                <div class="col-md-5 mb-4">
+                    <div class="card mb-2">
+                        <img src="<%= categorie.image %>" class="card-img-top" alt="image-categorie">
                         <div class="card-body">
                             <h4 class="card-text"><%= categorie.categorie %></h4>
-                            <p><%= categorie.description %></p>
+                            <p class="card-text"><%= categorie.description %></p>
                         </div>
                     </div>
                 </div>
