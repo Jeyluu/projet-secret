@@ -27,17 +27,23 @@
         <section class="categorie-jeu">
             <div class="row ">
 
-                <% categories.forEach(function(categorie) {%> 
-                <div class="col-md-5 mb-4">
-                    <div class="card mb-2">
-                        <img src="<%= categorie.image %>" class="card-img-top" alt="image-categorie">
-                        <div class="card-body">
-                            <h4 class="card-text"><%= categorie.categorie %></h4>
-                            <p class="card-text"><%= categorie.description %></p>
-                        </div>
+                <% categories.forEach(function(categorie) {%>
+                    <div class="col-md-5 mb-4">
+                        <a href="">
+                            <div class="card mb-2">
+                                <img src="<%= categorie.image %>" class="card-img-top" alt="image-categorie">
+                                <div class="card-body">
+                                    <h4 class="card-text">
+                                        <%= categorie.categorie %>
+                                    </h4>
+                                    <p class="card-text">
+                                        <%= categorie.description %>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <%})%> 
+                    <%})%>
 
             </div>
         </section>
