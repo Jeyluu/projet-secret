@@ -79,9 +79,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ------------------------------------------- Chargement des routes -------------------------------------------//
 //Chargement des routes
 const pagePrincipale = require('./routes/routePagePrincipale')
+const pageTableauDeBord = require('./routes/routeTableauDeBord')
 
 //application du controller
+app.use('/',pageTableauDeBord)
 app.use('/',pagePrincipale) // il faut laisser cette ligne en dernier dans les controllers
+
 
 //***** ecoute du port *****//
 app.listen(port, () => {
