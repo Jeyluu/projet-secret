@@ -34,6 +34,19 @@ body{
     display: flex;
     justify-content: center;
 }
+
+/*HEADER ADMIN*/
+li{
+    list-style-type: none;
+}
+
+/*PAGE AJOUT ARTICLE*/
+select{
+    color: #262626;
+}
+option{
+    color: #262626;
+}
 /* FOOTER */
 
 footer{

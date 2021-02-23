@@ -38,3 +38,27 @@ SET image = 'images/plateforme.jpg'
 WHERE categorieId = 4;
 
 ALTER TABLE categorieJeu ADD liens VARCHAR(50)
+
+-- TABLE auteur
+CREATE TABLE auteur(
+auteurId INT PRIMARY KEY AUTO_INCREMENT,
+pseudo VARCHAR(20)
+);
+SELECT auteur.auteurId, auteur.pseudo from auteur;
+INSERT INTO auteur(pseudo) VALUES ('ProJecTt');
+
+
+
+-- TABLE article
+CREATE TABLE article (
+	articleId INT PRIMARY KEY AUTO_INCREMENT,
+    titre VARCHAR(25),
+    image VARCHAR(255), 
+    contenu VARCHAR(255),
+    categorieID INT,
+    auteurID INT,
+    FOREIGN KEY (categorieID) REFERENCES categorieJeu(categorieId),
+    FOREIGN KEY (auteurID) REFERENCES auteur(auteurId)
+);
+
+SELECT * FROM article;
