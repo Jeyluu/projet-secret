@@ -1,0 +1,60 @@
+<%- include('partials-admin/header.ejs') %>
+
+    <div class="block-ajout-article">
+
+
+
+        <h1>Ajouter un article</h1>
+
+        <!-- FORMULAIRE D'AJOUT D'ARTICLE -->
+
+        <form action="/tableau-de-bord/ajouter-un-article" method="POST">
+            <!-- TITRE -->
+            <div class="mb-3 mt-3">
+                <label class="form-label">Titre de l'article</label>
+                <input class="form-control" name="titre">
+            </div>
+
+            <!-- IMAGE -->
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Télécharger l'image</label>
+                <input class="form-control" type="file" id="formFile" name="image">
+            </div>
+
+            <!-- CATEGORIE -->
+            <div class="mb-3">
+                
+                <select name="categorieId">
+                    <option>Catégorie de l'article</option>
+                    <% categories.forEach(function(categorie) {%>
+                    <option value="<%=categorie.categorieId%>"><%=categorie.categorie%></option>
+                    <%});%>
+                </select>
+            </div>
+
+
+            <!-- CONTENU -->
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Contenu de l'article</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="contenu"></textarea>
+            </div>
+            
+
+            <!-- AUTEUR -->
+            <div class="mb-3">
+                <select name="auteurId">
+                    <option>Choisir l'auteur</option>
+                    <% auteurs.forEach(function(auteur) {%>
+                    <option value="<%=auteur.auteurId%>"><%=auteur.pseudo%></option>
+                    <%});%>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Publier</button>
+
+        </form>
+        <a href="/tableau-de-bord"><button class="btn btn-danger mt-2">Annuler sans sauvegarder</button></a>
+    </div>
+
+
+    <%- include('partials-admin/footer.ejs') %>

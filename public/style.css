@@ -18,6 +18,11 @@
     color: #00a7bd;
 }
 
+/*HEADER ADMIN*/
+li{
+    list-style-type: none;
+}
+
 /* BODY */
 body{
     
@@ -33,6 +38,21 @@ body{
 .row {
     display: flex;
     justify-content: center;
+}
+/*PAGE PRINCIPALE*/
+.introduction{
+    width: 100%;
+    transform: scaleX(30px);
+    transition: 0.5s all linear;
+    background-color: rgba(54, 54, 54, 0.753);
+}
+
+/*PAGE AJOUT ARTICLE*/
+select{
+    color: #262626;
+}
+option{
+    color: #262626;
 }
 /* FOOTER */
 
