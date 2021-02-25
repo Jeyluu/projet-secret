@@ -35,8 +35,15 @@
                         <label for="exampleFormControlInput1" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="exampleFormControlInput1"
                             placeholder="name@example.com" name="email">
+                            
+                            <!-- CHARGEMENT DU MESSAGE D'ERREUR-->
+                
+                            <% if(message.length > 0) {%>
+                            <div class="alert alert-danger mb-2" role="alert"><%= message %></div>
+                            <%}%>
                     </div>
                 </div>
+                
 
             </div>
 

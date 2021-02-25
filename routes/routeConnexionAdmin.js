@@ -10,4 +10,9 @@ router.post('/inscription',controlleurCoAdmin.postInscription)
 //Affichage de la page Connexion Admin
 router.get('/connexion',controlleurCoAdmin.pageCoAdmin )
 
+//connexion à partir de la page Connexion Admin
+router.post('/connexion',controlleurCoAdmin.postConnexion)
+
+
+
 module.exports = router

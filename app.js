@@ -56,7 +56,7 @@ app.use(session({
     saveUninitialized: true,
     store: sessionStore,
     cookie: {
-        maxage: 1000 * 60 * 60 * 24 // le cookie du 24heures
+        maxage: 1000 * 60 * 60 * 24 // le cookie dure 24heures
     }
 }))
 
@@ -78,14 +78,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // ------------------------------------------- Chargement des routes -------------------------------------------//
+//Chargement du middleware
+const verificationConnexion = require('./middleware/verificationConnexionAdmin')
+
 //Chargement des routes
 const pagePrincipale = require('./routes/routePagePrincipale')
 const pageTableauDeBord = require('./routes/routeTableauDeBord')
 const pageConnexionAdmin = require('./routes/routeConnexionAdmin')
 
 //application du controller
-app.use('/admin',pageConnexionAdmin)
-app.use('/',pageTableauDeBord)
+app.use('/admin',verificationConnexion.verifierConnexion,pageConnexionAdmin)
+app.use('/',verificationConnexion.verifierConnexion,pageTableauDeBord)
 app.use('/',pagePrincipale) // il faut laisser cette ligne en dernier dans les controllers
 
 
