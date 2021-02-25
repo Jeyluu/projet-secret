@@ -62,3 +62,7 @@ CREATE TABLE article (
 );
 
 SELECT * FROM article;
+
+SELECT article.titre, article.image,article.articleId, auteur.pseudo, categorieJeu.categorie FROM auteur
+INNER JOIN article ON auteur.auteurId = article.auteurID
+INNER JOIN categorieJeu ON categorieJeu.categorieId = article.categorieID;

@@ -10,4 +10,13 @@ router.get('/tableau-de-bord/ajouter-un-article', controllerTableauDeBord.getArt
 //Ajout de l'article dans la base de donnée
 router.post('/tableau-de-bord/ajouter-un-article', controllerTableauDeBord.postArticle)
 
+//Affichage de l'article dans la base de donnée pour modification
+router.get('/tableau-de-bord/modifier-un-article/:id', controllerTableauDeBord.affichageArticle)
+
+//Publication de la modification
+router.put('/tableau-de-bord/modifier-un-article/:id',controllerTableauDeBord.modifierArticle)
+
+//Supression de l'article dans la base de donnée
+router.delete('/tableau-de-bord/:id',controllerTableauDeBord.supressionArticle)
+
 module.exports = router

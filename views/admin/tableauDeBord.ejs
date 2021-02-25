@@ -1,43 +1,53 @@
+<%- include('partials-admin/header') %>
 <div class="container">
     <div class="row">
 
-        <div class="col-md-12">
-            <h2>Bienvenue sur l'interfarce administrateur</h2>
+        <div class="col-md-12 ">
+            <h2>Bienvenue sur l'interface administrateur</h2>
         </div>
 
     </div>
-<!-- ************************************** Liste des articles ************************************** -->
-    <div class="tableau">
-        <table class="table table-striped table-hover">
-            <thead>
 
-                <tr>
-                    <th style="text-align: center;">Titre</th>
-                    <th style="text-align: center;">Image</th>
-                    <th style="text-align: center;">Auteur</th>
-                    <th style="text-align: center;">Modifier</th>
-                    <th style="text-align: center;">Supprimer</th>
-                </tr>
+    <div class="row">
 
-            </thead>
+        <div class="col-md-12">
+            <table class="table table-striped table-hover">
+                <thead>
 
-            <tbody>
-                    <% ListeDesArticles.forEach(function(lacategorie) {%>
-                <tr>
-                    <td style="text-align: center;"><%=lacategorie.titre%></td>
-                    <td class="img thumbnail" style="text-align: center;"><img style="width:150px" src="<%=lacategorie.image%>" alt=""></td>
-                    <td style="text-align: center;"><%=lacategorie.nom%></td>
-                    <td style="text-align: center;"><a href="liste-des-articles/edit/<%=lacategorie.articleId%>"><button type="button" class="btn btn-primary"><i class="far fa-edit"></i> Modifier</button></a></td>
-                    
-                    <!-- formulaire de suppression d'article -->
-                    <form action="/tableau-de-bord/liste-des-articles/<%=lacategorie.articleId%>?_method=DELETE" method="POST">
-                        <td style="text-align: center;"><button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Supprimer</button></td>
-                    </form>
-                    
-                </tr>
-                <%});%>
-            </tbody>
-        </table>
+                    <tr>
+                        <th style="text-align: center;">Titre</th>
+                        <th style="text-align: center;">Image</th>
+                        <th style="text-align: center;">Auteur</th>
+                        <th style="text-align: center;">Catégorie</th>
+                        <th style="text-align: center;">Modifier</th>
+                        <th style="text-align: center;">Supprimer</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                        <% affichage.forEach(function(article) {%>
+                    <tr>
+                        <td style="text-align: center;"><%= article.titre %></td>
+                        <td class="img thumbnail" style="text-align: center;"><img style="width:150px" src="/images/uploads/<%= article.image%>" alt=""></td>
+                        <td style="text-align: center;"><%= article.pseudo%></td>
+                        <td style="text-align: center;"><%= article.categorie%></td>
+                        <td style="text-align: center;"><a href="/tableau-de-bord/modifier-un-article/<%= article.articleId %> "><button type="button" class="btn btn-primary"><i class="far fa-edit"></i> Modifier</button></a></td>
+                        
+                        <!-- formulaire de suppression d'article -->
+                        <form action="/tableau-de-bord/<%=article.articleId%>?_method=DELETE" method="POST">
+                            <td style="text-align: center;"><button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Supprimer</button></td>
+                        </form>
+                        
+                    </tr>
+                    <%})%>
+                </tbody>
+            </table>
+        </div>
+        </div>
 
     </div>
+
 </div>
+
+<%- include('partials-admin/footer') %>
