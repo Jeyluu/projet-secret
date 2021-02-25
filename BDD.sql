@@ -66,3 +66,16 @@ SELECT * FROM article;
 SELECT article.titre, article.image,article.articleId, auteur.pseudo, categorieJeu.categorie FROM auteur
 INNER JOIN article ON auteur.auteurId = article.auteurID
 INNER JOIN categorieJeu ON categorieJeu.categorieId = article.categorieID;
+
+CREATE TABLE utilisateur (
+utilisateurID INT PRIMARY KEY AUTO_INCREMENT,
+nom VARCHAR(20) NOT NULL,
+prenom VARCHAR(20) NOT NULL,
+pseudo VARCHAR(25) NOT NULL,
+email VARCHAR(30) NOT NULL,
+motdepasse VARCHAR(255)NOT NULL
+)
+
+SELECT * FROM utilisateur;
+
+SELECT COUNT(*) AS cnt from utilisateur WHERE email = "jean@gmail.com";

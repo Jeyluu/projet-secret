@@ -1,34 +1,45 @@
-<%- include('partials/header') %>
-<div class="container">
-    <div class="row">
 
-        <div class="col-md-12">
-            <h2>Les jeux FPS</h2>
-        </div>
+    <%- include('partials/header') %>
+    
 
-    </div>
 
-    <div class="row">
+        <div class="container">
+            <div class="row">
 
-        <div class="col-md-8">
-            <div class="article">
-                <div class="image-article">
-
-                </div>
-                <div class="texte-article">
-                    <div class="titre-article">
-                        <h4></h4>
-                    </div>
-                    <div class="description-article">
-                        <p></p>
-                    </div>
+                <div class="col-md-12">
+                    <h2>Les jeux FPS</h2>
                 </div>
 
             </div>
 
+            <div class="row">
+
+
+                <div class="col-md-8">
+                    <% carteJeu.forEach(function(carte){%>
+                        <div class="article">
+                            <div class="image-article">
+                                <img src="/images/uploads/<%=carte.image%>" alt="">
+                            </div>
+                            <div class="texte-article">
+                                <div class="titre-article">
+                                    <h4>
+                                        <%=carte.titre%>
+                                    </h4>
+                                </div>
+                                <div class="description-article">
+                                    <p>
+                                        <%=carte.contenu%>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <%})%>
+                </div>
+
+
+            </div>
         </div>
-
-
-    </div>
-</div>
-<%- include('partials/footer') %>
+    
+    <%- include('partials/footer') %>
