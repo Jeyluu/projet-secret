@@ -1,60 +1,89 @@
 <%- include('partials/header') %>
     <!-- Block pour l'introduction du blog -->
-    
-        <div class="container">
-            <section class="mb-5 ">
-                <div class="row ">
 
-                    <div class="col-md-9 introduction">
-                        <div class="introduction-apparition">
-                            <div class="titre-intro ">
-                                <h1>Introduction de notre site</h1>
-                            </div>
-                            <div class="presentation-intro">
-                                <p>Bienvenue sur notre blog concernant le gaming.<br>
-                                    Sachez que tous les articles qui sont postés sont soumis à des tests par nos
-                                    testeurs de
-                                    jeux
-                                    qui sont passionnés de jeu mais aussi de nouvelles expériences dans le gaming.
-                                    C'est pourquoi nos articles sont crédibles et très souvent cités dans les médias
-                                    gaming.<br>
-                                    Notre equipe que votre expérience sera plaisante et que nos articles vous aiderons à
-                                    faire
-                                    votre
-                                    choix de jeu.</p>
-                            </div>
+    <div class="container">
+        <section class="mb-5 ">
+            <div class="row ">
+
+                <div class="col-md-9 introduction">
+                    <div class="introduction-apparition">
+                        <div class="titre-intro ">
+                            <h1>Introduction de notre site</h1>
                         </div>
-
+                        <div class="presentation-intro">
+                            <p>Bienvenue sur mon blog Gaming<br>
+                                Cliquez sur l'une des catégories ci-dessous pour naviguer et voir les tests déjà
+                                effectués. Vous y trouverez un article complet avec tous les apsect que seuls les gamers
+                                comme nous peuvent comprendre et rechercher.
+                                <br>
+                                Le gameplay, graphisme, histoire bref beaucoup de sujet j'espère que vous aimez la
+                                lecture.
+                            </p>
+                        </div>
                     </div>
 
                 </div>
-            </section>
 
-            <!-- Block pour les cartes de catégories -->
-            <section class="categorie-jeu">
-                <div class="row ">
+            </div>
+        </section>
 
-                    <% categories.forEach(function(categorie) {%>
-                        <div class="col-md-5 mb-4">
-                            <a href="/<%= categorie.liens %>" class="carte">
-                                <div class="card mb-2">
-                                    <img src="<%= categorie.image %>" class="card-img-top" alt="image-categorie">
-                                    <div class="card-body">
-                                        <h4 class="card-text">
-                                            <%= categorie.categorie %>
-                                        </h4>
-                                        <p class="card-text">
-                                            <%= categorie.description %>
-                                        </p>
-                                    </div>
+        <!-- Block pour les cartes de catégories -->
+        <section class="categorie-jeu">
+            <div class="row ">
+
+                <% categories.forEach(function(categorie) {%>
+                    <div class="col-md-5 mb-4 cards">
+                        <a href="/<%= categorie.liens %>" class="carte">
+                            <div class="card mb-2">
+                                <img src="<%= categorie.image %>" class="card-img-top" alt="image-categorie">
+                                <div class="card-body">
+                                    <h4 class="card-text">
+                                        <%= categorie.categorie %>
+                                    </h4>
+                                    <p class="card-text">
+                                        <%= categorie.description %>
+                                    </p>
                                 </div>
-                            </a>
-                        </div>
-                        <%})%>
+                            </div>
+                        </a>
+                    </div>
+                    <%})%>
+
+            </div>
+        </section>
+
+
+    </div>
+
+    <section id="apropos">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="text-align: center;margin-top: 50px;">A propos de moi</h2>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="img-text-propos">
+                    <img class="image-propos " src="../images/apropos.jpg" alt="">
+
+
+                    <p class="text-propos">Gameur depuis le plus jeune âge, j'adore tester tous les types de jeux sur tous type de
+                        plateforme. J'ai fait ce blog afin de partager mon point de vue avec vous frère du gaming.
+                        Si cela peut vous permettre de ne pas mettre des euros dans n'importe quel jeu <br>
+                        Je fais des tests sur toutes les sorties jeux vidéos depuis 2020.<br>
+                        J'espère que le blog vous plaira et vous permettra de vous faire un avis sur le jeu qui vous
+                        interesse mais que vous n'osez pas acheter.<br>
+                        Je fais des mises à jours toutes les semaines.
+                    </p>
 
                 </div>
-            </section>
+
+            </div>
+
         </div>
-    
+
+    </section>
 
     <%- include('partials/footer') %>

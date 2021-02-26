@@ -4,7 +4,7 @@
         <div class="row">
 
             <div class="col-md-12">
-                <div class="titre-page-ajout">
+                <div class="ajout-article">
                     <h1>Ajouter un article</h1>
                 </div>
             </div>
@@ -17,7 +17,7 @@
             <form action="/tableau-de-bord/ajouter-un-article" method="POST" enctype="multipart/form-data">
                 <div class="col-md-6">
                     <!-- TITRE -->
-                    <div class="ajout-titre-article">
+                    <div class="ajout-article">
                         <label class="form-label">Titre de l'article</label>
                         <input class="form-control" name="titre">
                     </div>
@@ -29,7 +29,7 @@
 
             <div class="col-md-3">
                 <!-- IMAGE -->
-                <div class="ajout-image-article">
+                <div class="ajout-article">
                     <label for="formFile" class="form-label">Télécharger l'image</label>
                     <input class="form-control" type="file" id="formFile" name="image">
                 </div>
@@ -41,7 +41,7 @@
 
             <div class="col-md-3">
                 <!-- CATEGORIE -->
-                <div class="ajout-categorie-article">
+                <div class="ajout-article">
 
                     <select name="categorieId">
                         <option>Catégorie de l'article</option>
@@ -60,7 +60,7 @@
         <div class="row">
             <!-- CONTENU -->
             <div class="col-md-8">
-                <div class="ajout-contenu-article">
+                <div class="ajout-article">
                     <label for="exampleFormControlTextarea1" class="form-label">Contenu de l'article</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="contenu"></textarea>
                 </div>
@@ -70,7 +70,7 @@
 
                 <div class="col-md-3">
                     <!-- AUTEUR -->
-                    <div class="ajout-auteur-article">
+                    <div class="ajout-article">
                         <select name="auteurId">
                             <option>Choisir l'auteur</option>
                             <% auteurs.forEach(function(auteur) {%>

@@ -5,14 +5,9 @@
     color: #fff;
     
 }
+/*HEADER*/
 
-header{
-    height: 20vh;
-    background-color: #2b2a2a;
-}
-.carte{
-    text-decoration: none;
-}
+
 
 .navbar-brand{
     color: #fff;
@@ -22,24 +17,55 @@ header{
     color: #00a7bd;
 }
 
+ul a{
+    text-decoration: none;
+    width: 300px;
+    font-size: 20px;
+}
+
+.cool-link::after{
+    content:'';
+    display: block;
+    width: 0;
+    height: 2px;
+    background:#00a7bd;
+    transition: width 0.3s;
+}
+
+.cool-link:hover::after{
+    width: 100%;
+    transition: width 0.3s;
+}
+
+
 /*HEADER ADMIN*/
 li{
     list-style-type: none;
+    
 }
 
 /* BODY */
 body{
-    
-    background-color: #00a7bd;
-    background-image: -webkit-linear-gradient( -40deg, #00a7bd 0%, #00a7bd 40%, #2b2a2a 40%, #2b2a2a 50%);
-    background-image: linear-gradient( -40deg, #00a7bd 0%, #00a7bd 40%, #2b2a2a 40%, #2b2a2a 50%);
+    background-image: url(./images/background2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .card-text {
     color: #262626;
 }
 
+.carte{
+    text-decoration: none;
+}
 
+.cards{
+    transition: 0.5s all;
+}
+
+.cards:hover{
+    transform: scale(1.05)
+}
 
 /*PAGE PRINCIPALE*/
 .introduction{
@@ -47,6 +73,34 @@ body{
     transform: scaleX(30px);
     transition: 0.5s all linear;
     background-color: rgba(54, 54, 54, 0.753);
+}
+
+#apropos{
+    background-color: rgb(0, 0, 0);
+    border-radius: 2px;
+    width: 100%;
+    position: relative;
+    box-shadow:0px 10px 40px 10px #fff ;
+    
+}
+
+.img-text-propos{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.image-propos {
+    width: 200px;
+    border-radius: 1px;
+    margin: 20px 40px;
+    
+}
+
+.text-propos{
+    margin-top: 100px;
+    width: 70%;
 }
 
 /*PAGE AFFICHAGE JEU PAR CATEGORIE*/
@@ -66,6 +120,31 @@ body{
     margin-left: 20px
 }
 
+/*PAGE INSCRIPTION*/
+
+.inscription {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/*TABLEAU DE BORD*/
+.block-bouton{
+    display: flex;
+    margin-top: 20px;
+    
+}
+
+.ajouter{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5px;
+}
+
+.deconnexion{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 5px;
+}
 /*PAGE AJOUT ARTICLE*/
 select{
     color: #262626;
@@ -74,42 +153,31 @@ option{
     color: #262626;
 }
 
-.titre-page-ajout{
+.ajout-article{
     margin-left: 20px;
     margin-bottom: 20px;
 }
 
-.ajout-titre-article{
-    
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.ajout-image-article{
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.ajout-categorie-article{
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.ajout-contenu-article{
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.ajout-auteur-article{
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
 
 .bouton{
     margin-left: 20px;
     margin-bottom: 20px;
 }
 /*PAGE MODIFICATION ARTICLE*/
+.edit {
+    margin-left: 20px;
+    margin-bottom: 20px
+}
+.edit-image{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+.edit-image-actuelle{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
 
 
 /* FOOTER */

@@ -16,8 +16,11 @@
             <!-- TITRE -->
             <div class="row">
                 <div class=" col-md-6 mb-3 mt-3">
-                    <label class="form-label">Titre de l'article</label>
+                    <div class="edit">
+                        <label class="form-label">Titre de l'article</label>
                     <input class="form-control" name="titre" value="<%=reprise.titre%>">
+                    </div>
+                    
                 </div>
             </div>
 
@@ -26,12 +29,18 @@
             <div class="row">
                 <div class="col-md-9" style="display: flex;">
                     <div class="mb-3 mr-2">
-                        <label for="formFile" class="form-label">Télécharger l'image</label>
-                        <input class="form-control" type="file" id="formFile" name="image">
+                        <div class="edit-image">
+                            <label for="formFile" class="form-label">Télécharger l'image</label>
+                                                    <input class="form-control" type="file" id="formFile" name="image">
+                        </div>
+                        
                     </div>
                     <div class="apercu-img mb-3">
-                        <h4>Image actuelle</h4>
+                        <div class="edit-image-actuelle">
+                            <h4>Image actuelle</h4>
                         <img src="/images/uploads/<%= reprise.image%> " alt="" style="width: 50%;">
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -42,10 +51,8 @@
             <div class="row">
                 <div class="col-md-3">
 
-                </div>
-                <div class="mb-3">
-
-                    <select name="categorieId">
+                    <div class="edit">
+                        <select name="categorieId">
                         <option>Catégorie de l'article</option>
                         <% categories.forEach(function(categorie) {%>
                             <option value="<%=categorie.categorieId%>">
@@ -53,6 +60,7 @@
                             </option>
                             <%});%>
                     </select>
+                    </div>
                 </div>
             </div>
 
@@ -60,7 +68,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <!-- CONTENU -->
-                    <div class="mb-3">
+                    <div class="edit">
                         <label for="exampleFormControlTextarea1" class="form-label">Contenu de l'article</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
                             name="contenu"><%=reprise.contenu%></textarea>
@@ -73,7 +81,7 @@
 
                 <div class="col-md-3">
                     <!-- AUTEUR -->
-                    <div class="mb-3">
+                    <div class="edit">
                         <select name="auteurId">
                             <option>Choisir l'auteur</option>
                             <% auteurs.forEach(function(auteur) {%>
@@ -89,12 +97,21 @@
 
             <div class="row">
                 <div class="col-md-3">
-                    <button type="submit" class="btn btn-primary">Publier</button>
-
+                    <div class="bouton">
+                        <button type="submit" class="btn btn-primary">Publier</button>
+                    </div>
+                    
                     </form>
-                    <a href="/tableau-de-bord"><button class="btn btn-danger mt-2">Annuler sans sauvegarder</button></a>
+                    
                 </div>
             </div>
+
+            <div class="col-md-3">
+                <div class="bouton">
+                    <a href="/tableau-de-bord"><button class="btn btn-danger mt-2">Annuler sans sauvegarder</button></a>
+                </div>
+                
+            </div>3
 
             
 
