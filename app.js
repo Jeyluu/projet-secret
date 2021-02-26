@@ -87,8 +87,8 @@ const pageTableauDeBord = require('./routes/routeTableauDeBord')
 const pageConnexionAdmin = require('./routes/routeConnexionAdmin')
 
 //application du controller
-app.use('/admin',verificationConnexion.verifierConnexion,pageConnexionAdmin)
-app.use('/',verificationConnexion.verifierConnexion,pageTableauDeBord)
+app.use('/admin',pageConnexionAdmin)
+app.use('/tableau-de-bord', verificationConnexion.verifierConnexion, pageTableauDeBord)
 app.use('/',pagePrincipale) // il faut laisser cette ligne en dernier dans les controllers
 
 

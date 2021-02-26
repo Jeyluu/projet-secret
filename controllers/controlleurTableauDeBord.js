@@ -4,7 +4,8 @@ const path = require("path");
 //Affichage de l'interface administration
 exports.getTableauDeBordPage = async (req, res) => {
     const affichageArticle = await querysql("SELECT article.titre, article.image,article.articleId, auteur.pseudo, categorieJeu.categorie FROM auteur INNER JOIN article ON auteur.auteurId = article.auteurID INNER JOIN categorieJeu ON categorieJeu.categorieId = article.categorieID")
-    res.render('admin/tableauDeBord', { affichage: affichageArticle })
+    const utilisateur = req.session.utilisateur
+    res.render('admin/tableauDeBord', { affichage: affichageArticle,utilisateur:utilisateur })
 }
 
 //Affichage de l'interface ajouter un article

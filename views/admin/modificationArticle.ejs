@@ -1,28 +1,29 @@
 <%- include('partials-admin/header.ejs') %>
 
     <div class="container">
-        
+
+        <div class="row">
+            <div class="col-md-12 ">
+                <h1>Modification de l'article</h1>
+            </div>
+        </div>
+
+
+        <!-- FORMULAIRE D'AJOUT D'ARTICLE -->
+
+        <form action="/tableau-de-bord/modifier-un-article/<%= reprise.articleId %>?_method=PUT " method="POST"
+            enctype="multipart/form-data">
+            <!-- TITRE -->
             <div class="row">
-                <div class="col-md-12 ">
-                    <h1>Modification de l'article</h1>
+                <div class=" col-md-6 mb-3 mt-3">
+                    <label class="form-label">Titre de l'article</label>
+                    <input class="form-control" name="titre" value="<%=reprise.titre%>">
                 </div>
             </div>
-            
-
-            <!-- FORMULAIRE D'AJOUT D'ARTICLE -->
-
-            <form action="/tableau-de-bord/modifier-un-article/<%= reprise.articleId %>?_method=PUT " method="POST"
-                enctype="multipart/form-data">
-                <!-- TITRE -->
-                <div class="row">
-                    <div class=" col-md-6 mb-3 mt-3">
-                        <label class="form-label">Titre de l'article</label>
-                        <input class="form-control" name="titre" value="<%=reprise.titre%>">
-                    </div>
-                </div>
 
 
-                <!-- IMAGE -->
+            <!-- IMAGE -->
+            <div class="row">
                 <div class="col-md-9" style="display: flex;">
                     <div class="mb-3 mr-2">
                         <label for="formFile" class="form-label">Télécharger l'image</label>
@@ -33,9 +34,15 @@
                         <img src="/images/uploads/<%= reprise.image%> " alt="" style="width: 50%;">
                     </div>
                 </div>
+            </div>
 
 
-                <!-- CATEGORIE -->
+
+            <!-- CATEGORIE -->
+            <div class="row">
+                <div class="col-md-3">
+
+                </div>
                 <div class="mb-3">
 
                     <select name="categorieId">
@@ -47,33 +54,50 @@
                             <%});%>
                     </select>
                 </div>
+            </div>
 
 
-                <!-- CONTENU -->
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Contenu de l'article</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
-                        name="contenu"><%=reprise.contenu%></textarea>
+            <div class="row">
+                <div class="col-md-8">
+                    <!-- CONTENU -->
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Contenu de l'article</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+                            name="contenu"><%=reprise.contenu%></textarea>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <!-- AUTEUR -->
+                    <div class="mb-3">
+                        <select name="auteurId">
+                            <option>Choisir l'auteur</option>
+                            <% auteurs.forEach(function(auteur) {%>
+                                <option value="<%=auteur.auteurId%>">
+                                    <%=auteur.pseudo%>
+                                </option>
+                                <%});%>
+                        </select>
+                    </div>
                 </div>
 
+            </div>
 
-                <!-- AUTEUR -->
-                <div class="mb-3">
-                    <select name="auteurId">
-                        <option>Choisir l'auteur</option>
-                        <% auteurs.forEach(function(auteur) {%>
-                            <option value="<%=auteur.auteurId%>">
-                                <%=auteur.pseudo%>
-                            </option>
-                            <%});%>
-                    </select>
+            <div class="row">
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary">Publier</button>
+
+                    </form>
+                    <a href="/tableau-de-bord"><button class="btn btn-danger mt-2">Annuler sans sauvegarder</button></a>
                 </div>
+            </div>
 
-                <button type="submit" class="btn btn-primary">Publier</button>
+            
 
-            </form>
-            <a href="/tableau-de-bord"><button class="btn btn-danger mt-2">Annuler sans sauvegarder</button></a>
-        
     </div>
 
 

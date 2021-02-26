@@ -66,13 +66,14 @@ exports.postConnexion = async (req, res) => {
 
     //si l'email existe 
     //Verifier le mot de passe
-    const utilisateur = await querysql('SELECT utilisateurId,nom, prenom, email, motdepasse FROM utilisateur WHERE email = ?', [email])
+    const utilisateur = await querysql('SELECT utilisateurId,nom, prenom,pseudo, email, motdepasse FROM utilisateur WHERE email = ?', [email])
     const checkpassword = await bcrypt.compare(motdepasse,utilisateur[0].motdepasse)
 
     if(!checkpassword) {
         req.flash("messmdp","Le mot de passe ne correspond pas")
         return res.redirect('/admin/connexion')
     } else {
+        console.log("req.ression :",utilisateur);
         req.session.utilisateurId = utilisateur[0].utilisateurId
         req.session.utilisateur = {
             id: utilisateur[0].utilisateurId,
@@ -86,3 +87,9 @@ exports.postConnexion = async (req, res) => {
 
 }
 
+//Deconnexion
+exports.deconnexion = async (req, res) => {
+    req.session.destroy(function(err){
+        res.redirect('/')
+    }) 
+}

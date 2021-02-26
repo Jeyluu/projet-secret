@@ -13,6 +13,7 @@ router.get('/connexion',controlleurCoAdmin.pageCoAdmin )
 //connexion à partir de la page Connexion Admin
 router.post('/connexion',controlleurCoAdmin.postConnexion)
 
-
+//Deconnexion de la session
+router.get('/deconnexion', controlleurCoAdmin.deconnexion)
 
 module.exports = router
