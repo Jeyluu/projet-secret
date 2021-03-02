@@ -1,35 +1,42 @@
 <%- include('partials/header') %>
     <!-- Block pour l'introduction du blog -->
 
-    <div class="container">
-        <section class="mb-5 ">
-            <div class="row ">
 
-                <div class="col-md-12 introduction">
-                    <div class="introduction-apparition">
-                        <div class="titre-intro ">
-                            <h1>Introduction de notre site</h1>
-                        </div>
-                        <div class="presentation-intro">
-                            <p>Bienvenue sur mon blog Gaming<br>
-                                Cliquez sur l'une des catégories ci-dessous pour naviguer et voir les tests déjà
-                                effectués. Vous y trouverez un article complet avec tous les apsect que seuls les gamers
-                                comme nous peuvent comprendre et rechercher.
-                                <br>
-                                Le gameplay, graphisme, histoire bref beaucoup de sujet j'espère que vous aimez la
-                                lecture.
-                            </p>
-                        </div>
+    <section class="introduction ">
+
+        <div class="row ">
+
+            <div class="col-md-12">
+                <div class="introduction-txt">
+                    <div class="titre-intro ">
+                        <h1>Introduction des New'Z Gaming</h1>
                     </div>
-
+                    <div class="presentation-intro">
+                        <p>Bienvenue sur mon blog Gaming<br>
+                            Cliquez sur l'une des catégories ci-dessous pour naviguer et voir les tests déjà
+                            effectués. Vous y trouverez un article complet avec tous les apsect que seuls les gamers
+                            comme nous peuvent comprendre et rechercher.
+                            <br>
+                            Le gameplay, graphisme, histoire bref beaucoup de sujet j'espère que vous aimez la
+                            lecture.
+                        </p>
+                    </div>
                 </div>
 
             </div>
-        </section>
 
-        <!-- Block pour les cartes de catégories -->
-        <section class="categorie-jeu">
+        </div>
+    </section>
+
+    <!-- Block pour les cartes de catégories -->
+    <section id="categorie-jeu">
+        <div class="container">
             <div class="row ">
+                <div class="col-md-12">
+                    <div class="cadre-titre">
+                        <h1 class="titre-pageprincipale">Choisissez votre jeu en fonction de vos gouts</h1>
+                    </div>
+                </div>
 
                 <% categories.forEach(function(categorie) {%>
                     <div class="col-md-3 mb-4 cards">
@@ -50,15 +57,17 @@
                     <%})%>
 
             </div>
-        </section>
+        </div>
+
+    </section>
 
 
-    </div>
+
 
     <section id="apropos">
         <div class="row">
             <div class="col-md-12">
-                <h2 style="text-align: center;margin-top: 50px;">A propos de moi</h2>
+                <h1 style="text-align: center;margin-top: 50px;">A propos de moi</h1>
             </div>
         </div>
 
@@ -69,7 +78,8 @@
                     <img class="image-propos " src="../images/apropos.jpg" alt="">
 
 
-                    <p class="text-propos">Gameur depuis le plus jeune âge, j'adore tester tous les types de jeux sur tous type de
+                    <p class="text-propos">Gameur depuis le plus jeune âge, j'adore tester tous les types de jeux sur
+                        tous type de
                         plateforme. J'ai fait ce blog afin de partager mon point de vue avec vous frère du gaming.
                         Si cela peut vous permettre de ne pas mettre des euros dans n'importe quel jeu <br>
                         Je fais des tests sur toutes les sorties jeux vidéos depuis 2020.<br>

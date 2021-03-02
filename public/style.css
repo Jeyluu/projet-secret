@@ -1,7 +1,6 @@
 * {
     
-    font-family: 'Changa', sans-serif;
-    color: #fff;
+    font-family: 'Abhaya Libre', serif;
     
 }
 /*HEADER*/
@@ -10,16 +9,25 @@
 
 .navbar-brand{
     color: #fff;
+    font-family: 'Changa', sans-serif;
 }
 
 .navbar-brand:hover{
     color: #00a7bd;
 }
 
+#z{
+    color: red;
+    font-size: 40px;
+}
+
 ul a{
     text-decoration: none;
-    width: 300px;
+    width: 200px;
     font-size: 20px;
+}
+.cool-link {
+    color: #fff;
 }
 
 .cool-link::after{
@@ -27,15 +35,25 @@ ul a{
     display: block;
     width: 0;
     height: 2px;
-    background:#00a7bd;
+    background:red;
     transition: width 0.3s;
+}
+
+.cool-link:hover{
+    color: #00a7bd;
 }
 
 .cool-link:hover::after{
     width: 100%;
     transition: width 0.3s;
+    
 }
 
+.onglet{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
 
 /*HEADER ADMIN*/
 li{
@@ -44,10 +62,54 @@ li{
 }
 
 /* BODY */
+
 body{
-    background-image: url(./images/background2.jpg);
-    background-size: cover;
-    background-attachment: fixed;
+    color: #262626;
+    
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Changa', sans-serif;
+
+}
+
+
+/*PAGE PRINCIPALE*/
+/*BLOCK INTRODUCTION*/
+.introduction{
+    width: 100%;
+    position: relative;
+    bottom: 50px;
+    background-color: #087CA7;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.introduction-txt{
+    width: 1600px;
+    padding: 40px;
+    margin:0px 50px;
+}
+
+.introduction h1{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.presentation-intro{
+    font-size: 18px;
+    
+}
+
+
+/*BLOCK CATEGORIE*/
+.titre-pageprincipale{
+    text-align: center;
+    margin-bottom: 40px;
+    
 }
 
 .card-text {
@@ -66,21 +128,16 @@ body{
     transform: scale(1.05)
 }
 
-/*PAGE PRINCIPALE*/
-.introduction{
-    width: 100%;
-    transform: scaleX(30px);
-    transition: 0.5s all linear;
-    background-color: rgba(54, 54, 54, 0.753);
-}
-
+/*BLOCK APROPOS*/
 #apropos{
-    background-color: rgb(0, 0, 0);
+    background-image: url(../images/background2.jpg);
+    background-position: center;
+    background-attachment: fixed;
     border-radius: 2px;
     width: 100%;
     position: relative;
-    
-    
+    color: #fff;
+
 }
 
 .img-text-propos{
@@ -200,13 +257,32 @@ footer{
     width: 30%;
 }
 
+.hidden{
+    border: none;
+    background: none;
+}
+
 .nav{
 
     list-style-type: none;
     text-decoration: none;
     border-left: 1px #fff solid;
     width: 40%;
+    
 
+}
+
+
+.question-secretes{
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+    
+}
+
+.easteregg{
+    width: 50px;
+    margin: 10px;
 }
 
 .foot-nav-link {
