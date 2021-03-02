@@ -1,5 +1,6 @@
 * {
-    
+    margin: 0;
+    padding: 0;
     font-family: 'Abhaya Libre', serif;
     
 }
@@ -160,6 +161,12 @@ h1,h2,h3,h4,h5 {
 }
 
 /*PAGE AFFICHAGE JEU PAR CATEGORIE*/
+.container {
+    display: flex;
+    justify-content: center;
+    
+}
+
 .titre-page{
     text-align: center;
 }
@@ -167,6 +174,10 @@ h1,h2,h3,h4,h5 {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+    background-color: #F7F7FF;
+    padding: 50px;
+    width: 100%;
+    box-shadow:1px 1px 1px 1px #5c5c5c;
 }
 
 .texte-article{
