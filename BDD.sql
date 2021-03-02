@@ -37,7 +37,7 @@ UPDATE categorieJeu
 SET image = 'images/plateforme.jpg'
 WHERE categorieId = 4;
 
-ALTER TABLE categorieJeu ADD liens VARCHAR(50)
+ALTER TABLE categorieJeu ADD liens VARCHAR(50);
 
 -- TABLE auteur
 CREATE TABLE auteur(
@@ -46,7 +46,7 @@ pseudo VARCHAR(20)
 );
 SELECT auteur.auteurId, auteur.pseudo from auteur;
 INSERT INTO auteur(pseudo) VALUES ('ProJecTt');
-
+DROP TABLE article;
 
 
 -- TABLE article
@@ -56,16 +56,15 @@ CREATE TABLE article (
     image VARCHAR(255), 
     contenu VARCHAR(255),
     categorieID INT,
-    auteurID INT,
+    utilisateurId INT,
     FOREIGN KEY (categorieID) REFERENCES categorieJeu(categorieId),
-    FOREIGN KEY (auteurID) REFERENCES auteur(auteurId)
+    FOREIGN KEY (utilisateurId) REFERENCES utilisateur(utilisateurID)
 );
+DROP TABLE auteur;
+
 
 SELECT * FROM article;
 
-SELECT article.titre, article.image,article.articleId, auteur.pseudo, categorieJeu.categorie FROM auteur
-INNER JOIN article ON auteur.auteurId = article.auteurID
-INNER JOIN categorieJeu ON categorieJeu.categorieId = article.categorieID;
 
 CREATE TABLE utilisateur (
 utilisateurID INT PRIMARY KEY AUTO_INCREMENT,

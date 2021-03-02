@@ -3,7 +3,7 @@ const path = require("path");
 
 //Affichage de l'interface administration
 exports.getTableauDeBordPage = async (req, res) => {
-    const affichageArticle = await querysql("SELECT article.titre, article.image,article.articleId, auteur.pseudo, categorieJeu.categorie FROM auteur INNER JOIN article ON auteur.auteurId = article.auteurID INNER JOIN categorieJeu ON categorieJeu.categorieId = article.categorieID")
+    const affichageArticle = await querysql("SELECT article.titre, article.image,article.articleId, utilisateur.pseudo, categorieJeu.categorie FROM utilisateur INNER JOIN article ON utilisateur.utilisateurID = article.utilisateurId INNER JOIN categorieJeu ON categorieJeu.categorieId = article.categorieID")
     const utilisateur = req.session.utilisateur
     res.render('admin/tableauDeBord', { affichage: affichageArticle,utilisateur:utilisateur })
 }
@@ -11,13 +11,13 @@ exports.getTableauDeBordPage = async (req, res) => {
 //Affichage de l'interface ajouter un article
 exports.getArticlePage = async (req, res) => {
     const categorieArticle = await querysql("SELECT categorieJeu.categorieId, categorieJeu.categorie FROM categorieJeu")
-    const auteurArticle = await querysql("SELECT auteur.auteurId, auteur.pseudo FROM auteur")
-    res.render('admin/ajoutArticle', { categories: categorieArticle, auteurs: auteurArticle })
+    const utilisateurArticle = await querysql("SELECT utilisateur.utilisateurID, utilisateur.pseudo FROM utilisateur")
+    res.render('admin/ajoutArticle', { categories: categorieArticle, auteurs: utilisateurArticle })
 }
 
 //Poster l'article dans la base de donnée MySql
 exports.postArticle = async (req, res) => {
-    const { titre, image, categorieId, contenu, auteurId } = req.body
+    const { titre, image, categorieId, contenu, utilisateurId } = req.body
     console.log(req.body);
 
 
@@ -35,7 +35,7 @@ exports.postArticle = async (req, res) => {
             return res.status(500).send(err)
         }
         try {
-            await querysql('INSERT INTO article(titre,image,categorieId,contenu,auteurId) VALUES (?,?,?,?,?)', [titre, imageName, categorieId, contenu, auteurId],
+            await querysql('INSERT INTO article(titre,image,categorieId,contenu,utilisateurId) VALUES (?,?,?,?,?)', [titre, imageName, categorieId, contenu, utilisateurId],
                 (err, result) => {
                     if (err) {
                         res.send(err)
@@ -52,16 +52,16 @@ exports.postArticle = async (req, res) => {
 //Affichage de  l'article pour modification dans la base de donnée MySql
 exports.affichageArticle = async (req, res) => {
     const categorieArticle = await querysql("SELECT categorieJeu.categorieId, categorieJeu.categorie FROM categorieJeu")
-    const auteurArticle = await querysql("SELECT auteur.auteurId, auteur.pseudo FROM auteur")
+    const utilisateurArticle = await querysql("SELECT utilisateur.utilisateurID, utilisateur.pseudo FROM utilisateur")
     const id = req.params.id
     const article = await querysql("SELECT article.titre, article.contenu, article.image, article.articleId FROM article WHERE articleId =?", [id]) //WHERE articleId = '" + req.params.id + "';"
-    res.render('admin/modificationArticle', { categories: categorieArticle, auteurs: auteurArticle, reprise: article[0] })
+    res.render('admin/modificationArticle', { categories: categorieArticle, auteurs: utilisateurArticle, reprise: article[0] })
 
 }
 
 //Modification de l'article dans la base de donnée MySql
 exports.modifierArticle = async (req, res) => {
-    const { titre, image, categorieId, contenu, auteurId } = req.body
+    const { titre, image, categorieId, contenu, utilisateurId } = req.body
     const id = req.params.id
 
     const imageUpload = req.files.image
@@ -80,7 +80,7 @@ exports.modifierArticle = async (req, res) => {
             return res.status(500).send(err)
         }
         try {
-            await querysql("UPDATE article SET titre = ?, image = ?, categorieId = ?, contenu = ?, auteurId = ? WHERE articleId = ?", [titre, imageName, categorieId, contenu, auteurId, id],
+            await querysql("UPDATE article SET titre = ?, image = ?, categorieId = ?, contenu = ?, utilisateurId = ? WHERE articleId = ?", [titre, imageName, categorieId, contenu, utilisateurId, id],
 
                 (err, result) => {
                     console.log(result);
