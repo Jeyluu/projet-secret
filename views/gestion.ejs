@@ -1,19 +1,14 @@
-
-    <%- include('partials/header') %>
-    
+<%- include('partials/header') %>
+    <section class="gestion">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="titre-page">Les jeux de Gestion</h2>
-                </div>
-            </div>
-            
+            <h2 class="text-center mb-2">Les tests GESTION déjà effectués ci-dessous</h2>
+
             <div class="row">
 
-                <div class="col-md-12">
+                <% carteJeu.forEach(function(carte){%>
+                    <div class="col-md-12">
 
-                    <% carteJeu.forEach(function(carte){%>
-                        <div class="article">
+                        <div class="article mb-4">
                             <div class="image-article">
                                 <img src="/images/uploads/<%=carte.image%>" alt="">
                             </div>
@@ -30,20 +25,19 @@
                                 </div>
                                 <div class="lien-article">
                                     <form action="/gestion/articleGestion/<%= carte.articleId%> ">
-                                        <button class="btn btn-link">En Lire plus...</button> 
+                                        <button class="btn btn-link">En Lire plus...</button>
                                     </form>
-                                    
+
                                 </div>
                             </div>
 
                         </div>
-                        <%})%>
-
-                </div>
 
 
+                    </div>
+                    <%})%>
             </div>
         </div>
-    
+    </section>
 
     <%- include('partials/footer') %>

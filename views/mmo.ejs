@@ -1,19 +1,18 @@
 
-
-
-
     <%- include('partials/header') %>
-    <h2 class="titre-page">Les jeux Massivement Multijoueur Online</h2>
+
+    <section class="mmo">
         <div class="container">
-            
+            <h2 class="text-center mb-2">Les tests MMO déjà effectués ci-dessous</h2>
 
-            <div class="row mt-5 mb-5">
+            <div class="row">
 
-                <div class="col-md-12">
-                    <% carteJeu.forEach(function(carte){%>
-                        <div class="article">
+                <% carteJeu.forEach(function(carte){%>
+                    <div class="col-md-12">
+
+                        <div class="article mb-4">
                             <div class="image-article">
-                                <img src="/images/uploads/<%=carte.image%>" alt="" style="width: 60%;">
+                                <img src="/images/uploads/<%=carte.image%>" alt="">
                             </div>
                             <div class="texte-article">
                                 <div class="titre-article">
@@ -30,16 +29,16 @@
                                     <form action="/mmo/articleMmo/<%= carte.articleId%> ">
                                         <button class="btn btn-link">En Lire plus...</button> 
                                     </form>
-                                    
+
                                 </div>
                             </div>
 
                         </div>
-                        <%})%>
-
-                </div>
 
 
+                    </div>
+                    <%})%>
             </div>
         </div>
+    </section>
         <%- include('partials/footer') %>
