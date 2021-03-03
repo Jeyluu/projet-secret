@@ -1,0 +1,61 @@
+<%- include('partials/header') %>
+    <div>
+
+
+        <div class="container connexion-admin">
+            <div class="row">
+                <div class="col-md-12 mb-5 intro-connexion">
+                    Bienvenue à toi Jeune aventurier, si tu es arrivé jusqu'ici ce n'est pas un hasard ! <br> Connectez-vous
+                    si vous y arrivez . . .
+                </div>
+                <!-- CHARGEMENT DU MESSAGE-->
+                <% if(message.length> 0) {%>
+                    <div class="alert alert-success mb-2" role="alert">
+                        <%= message %>
+                    </div>
+                    <%}%>
+            </div>
+
+            <div class="row ">
+                <div class="col-md-12 block-connexion">
+                    <form action="/admin/connexion?_method=POST" method="POST" class="form-connexion">
+                        <div class="col-md-5 mb-3">
+                            <label for="exampleInputEmail1" class="form-label" >Adresse Email </label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" name="email">
+                            <% if(messemail.length> 0) {%>
+                                <div class="alert alert-danger mb-2" role="danger">
+                                    <%= messemail %>
+                                </div>
+                                <%}%>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <label for="exampleInputPassword1" class="form-label" >Mot de passe</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="motdepasse">
+                            <% if(messmdp.length> 0) {%>
+                                <div class="alert alert-danger mb-2" role="danger">
+                                    <%= messmdp %>
+                                </div>
+                                <%}%>
+                        </div>
+                        <div class="black-btn">
+                            <div class="btn-connexion">
+                                <button type="submit" class="btn btn-primary mb-2">Connexion</button>
+                            </div>
+                            
+                            <div class="retour">
+                                <a href="/"><button class="btn btn-danger">Retour sur la page principale</button></a>
+                            </div>
+                            
+                        </div>
+                        
+                    </form>
+
+                    
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <%- include('partials/footer') %>

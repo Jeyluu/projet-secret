@@ -3,12 +3,12 @@ const bcrypt = require('bcrypt')
 
 //Affichage de la page Inscription
 exports.pageInscription = async (req, res) => {
-    res.render('admin/inscription',{message : req.flash('message')})
+    res.render('inscription',{message : req.flash('message')})
 }
 
 //Affichage de la page connexion Admin
 exports.pageCoAdmin = async (req, res) => {
-    res.render('admin/coAdmin',{message : req.flash('message'), messemail:req.flash("messemail"), messmdp:req.flash("messmdp")})
+    res.render('coAdmin',{message : req.flash('message'), messemail:req.flash("messemail"), messmdp:req.flash("messmdp")})
 }
 
 //Enregistrement dans la DB

@@ -1,0 +1,76 @@
+<%- include('partials/header') %>
+    <div class="container">
+        <form action="/admin/inscription?_method=POST" method="POST">
+
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="inscription">
+                        <label for="exampleFormControlInput1" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nom"
+                            name="nom">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="inscription">
+                        <label for="exampleFormControlInput1" class="form-label">Prenom</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="prenom"
+                            name="prenom">
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="inscription">
+                        <label for="exampleFormControlInput1" class="form-label">Pseudo</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Pseudo"
+                            name="pseudo">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="inscription">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com" name="email">
+
+                        <!-- CHARGEMENT DU MESSAGE D'ERREUR-->
+
+                        <% if(message.length> 0) {%>
+                            <div class="alert alert-danger mb-2" role="alert">
+                                <%= message %>
+                            </div>
+                            <%}%>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="inscription">
+                        <label for="exampleFormControlInput1" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="exampleFormControlInput1" name="motdepasse">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="bouton">
+                        <button class="btn btn-success" type="submit">Inscription</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <%- include('partials/footer') %>
