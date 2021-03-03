@@ -78,3 +78,8 @@ motdepasse VARCHAR(255)NOT NULL
 SELECT * FROM utilisateur;
 
 SELECT COUNT(*) AS cnt from utilisateur WHERE email = "jean@gmail.com";
+
+SELECT article.titre, article.image,article.articleId, utilisateur.pseudo, categorieJeu.categorie, article.contenu
+FROM utilisateur 
+INNER JOIN article ON utilisateur.utilisateurID = article.utilisateurId 
+INNER JOIN categorieJeu ON categorieJeu.categorieId = article.categorieID

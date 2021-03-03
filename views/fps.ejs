@@ -13,7 +13,7 @@
             <div class="row">
 
 
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <% carteJeu.forEach(function(carte){%>
                         <div class="article">
                             <div class="image-article">
@@ -29,6 +29,12 @@
                                     <p>
                                         <%=carte.contenu%>
                                     </p>
+                                </div>
+                                <div class="lien-article">
+                                    <form action="/fps/articleFps/<%= carte.articleId%> ">
+                                        <button class="btn btn-link">En Lire plus...</button> 
+                                    </form>
+                                    
                                 </div>
                             </div>
 

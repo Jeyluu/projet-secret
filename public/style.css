@@ -11,6 +11,7 @@
 .navbar-brand{
     color: #fff;
     font-family: 'Changa', sans-serif;
+    
 }
 
 .navbar-brand:hover{
@@ -50,10 +51,16 @@ ul a{
     
 }
 
+.head:hover {
+    transform: scale(1.3);
+    transition: 0.5s all;
+}
+
 .onglet{
     display: flex;
     flex-direction: row;
     margin-top: 15px;
+    margin-right: 20px;
 }
 
 /*HEADER ADMIN*/
@@ -161,23 +168,21 @@ h1,h2,h3,h4,h5 {
 }
 
 /*PAGE AFFICHAGE JEU PAR CATEGORIE*/
-.container {
-    display: flex;
-    justify-content: center;
-    
-}
+
 
 .titre-page{
     text-align: center;
+    margin-bottom: 50px;
 }
 .article{
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
-    background-color: #F7F7FF;
+    background-color: #8595a5;
     padding: 50px;
-    width: 100%;
+    border-radius: 2px;
     box-shadow:1px 1px 1px 1px #5c5c5c;
+    margin-bottom: 40px;
 }
 
 .texte-article{
@@ -187,11 +192,46 @@ h1,h2,h3,h4,h5 {
     margin-left: 20px
 }
 
+/*AFFICHAGE JEU SIMPLE*/
+
+
+
 /*PAGE INSCRIPTION*/
 
 .inscription {
     margin-left: 20px;
     margin-bottom: 20px;
+}
+
+/*PAGE CONNEXION*/
+
+
+.intro-connexion{
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+
+.block-connexion{
+    padding: 80px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.form-connexion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.black-btn{
+    display: flex;
+}
+
+.btn-connexion{
+    margin-right: 20px;
 }
 
 /*TABLEAU DE BORD*/
@@ -308,6 +348,11 @@ footer{
 
     padding-top: 10px; 
 
+}
+
+.foot:hover{
+    transform: translateX(10px);
+    transition: 0.5s all;
 }
 
 .network{
