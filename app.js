@@ -51,7 +51,7 @@ var sessionStore = new MySQLsession({}, db)
 
 app.use(session({
     name: 'cookie-final',
-    secret: 'secret',
+    secret: process.env.DB_SECRET,
     resave: false,
     saveUninitialized: true,
     store: sessionStore,
