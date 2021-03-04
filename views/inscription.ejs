@@ -1,38 +1,29 @@
 <%- include('partials/header') %>
-    <div class="container ">
-        <form action="/admin/inscription?_method=POST" method="POST">
 
+    <section class="inscription ">
 
-            <div class="row">
-                <div class="col-md-6 ">
-                    <div class="inscription">
-                        <label for="exampleFormControlInput1" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nom"
-                            name="nom">
+        <div class="container ">
+            <form action="/admin/inscription?_method=POST" method="POST">
+                <div class="row">
+
+                    <div class="col-md-6 mx-auto">
+                        <div class="col-md-6">
+                            <label for="exampleFormControlInput1" class="form-label">Nom</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nom"
+                                name="nom">
+
+                        </div>
+                        <div class="col-md-6">
+                            <label for="exampleFormControlInput1" class="form-label">Prenom</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="prenom"
+                                name="prenom">
+                        </div>
                     </div>
                 </div>
+                
+                <div class="row">
 
-                <div class="col-md-6">
-                    <div class="inscription">
-                        <label for="exampleFormControlInput1" class="form-label">Prenom</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="prenom"
-                            name="prenom">
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="inscription">
-                        <label for="exampleFormControlInput1" class="form-label">Pseudo</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Pseudo"
-                            name="pseudo">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="inscription">
+                    <div class="col-md-6 mx-auto">
                         <label for="exampleFormControlInput1" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="exampleFormControlInput1"
                             placeholder="name@example.com" name="email">
@@ -44,31 +35,47 @@
                                 <%= message %>
                             </div>
                             <%}%>
+                                <label for="exampleFormControlInput1" class="form-label">Mot de passe</label>
+                                <input type="password" class="form-control" id="exampleFormControlInput1"
+                                    name="motdepasse">
+                                <button class="btn btn-success" type="submit">Inscription</button>
                     </div>
                 </div>
 
 
-            </div>
 
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="inscription">
-                        <label for="exampleFormControlInput1" class="form-label">Mot de passe</label>
-                        <input type="password" class="form-control" id="exampleFormControlInput1" name="motdepasse">
-                    </div>
-                </div>
-            </div>
+            </form>
+        </div>
 
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="bouton">
-                        <button class="btn btn-success" type="submit">Inscription</button>
-                    </div>
 
-                </div>
 
-            </div>
-        </form>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </section>
 
     <%- include('partials/footer') %>

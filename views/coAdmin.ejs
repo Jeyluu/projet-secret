@@ -4,14 +4,15 @@
         <div class="container">
 
             <p class="text-center text-co">Bienvenue à toi jeune entrepreneur,<br>
-                si tu es arrivé ici ce n'est pas un hasard. Rentre donc ton identifiant et ton mot de passe si tu l'oses.<br>
+                si tu es arrivé ici ce n'est pas un hasard. Rentre donc ton identifiant et ton mot de passe si tu
+                l'oses.<br>
                 Que saradomin soit avec toi ! Kiflom
             </p>
 
             <div class="row ">
 
                 <form action="/admin/connexion?_method=POST" method="POST">
-                    <div class="col-md-12 mb-3 form-connexion">
+                    <div class="col-md-6 mb-3 form-connexion mx-auto">
                         <label for="exampleInputEmail1" class="form-label">Adresse Email :</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                             name="email">
@@ -28,19 +29,17 @@
                                         <%= messmdp %>
                                     </div>
                                     <%}%>
-                                    <a href=""><button type="submit" class="btn btn-primary ">Connexion</button></a>
-                </form>
-                <a href="/"><button class="btn btn-danger ml-2">Retour</button></a>
-                    </div>
-                    
-                
-            </div>
-            
-            
+                                        <a href=""><button type="submit" class="btn btn-primary ">Connexion</button></a>
 
+                
+                            <a href="/"><button class="btn btn-danger ml-2">Retour</button></a>
+                    </div>
+                </form>
+        </div>
 
 
         </div>
+
 
     </section>
     <%- include('partials/footer') %>
