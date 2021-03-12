@@ -6,7 +6,8 @@ const util = require('util');
 const flash = require('connect-flash');
 const session = require('express-session');
 const MySQLsession = require('express-mysql-session');
-const fileUpload = require('express-fileupload')
+const fileUpload = require('express-fileupload');
+
 
 //***** port *****//
 const port = 3001;

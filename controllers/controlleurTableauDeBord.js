@@ -35,7 +35,7 @@ exports.postArticle = async (req, res) => {
             return res.status(500).send(err)
         }
         try {
-            await querysql('INSERT INTO article(titre,image,categorieId,contenu,utilisateurId) VALUES (?,?,?,?,?)', [titre, imageName, categorieId, contenu, utilisateurId],
+            await querysql('INSERT INTO article(??,??,??,??,??) VALUES (?,?,?,?,?)', ['titre','image','categorieId','contenu','utilisateurId',titre, imageName, categorieId, contenu, utilisateurId],
                 (err, result) => {
                     if (err) {
                         res.send(err)
@@ -80,7 +80,7 @@ exports.modifierArticle = async (req, res) => {
             return res.status(500).send(err)
         }
         try {
-            await querysql("UPDATE article SET titre = ?, image = ?, categorieId = ?, contenu = ?, utilisateurId = ? WHERE articleId = ?", [titre, imageName, categorieId, contenu, utilisateurId, id],
+            await querysql("UPDATE article SET ?? = ?, ?? = ?, ?? = ?, ?? = ?, ?? = ? WHERE ?? = ?", ['titre',titre,'image', imageName,'categorieId', categorieId,'contenu', contenu,'utilisateurId', utilisateurId,'articleId', id],
 
                 (err, result) => {
                     console.log(result);
