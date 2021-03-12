@@ -92,6 +92,11 @@ app.use('/tableau-de-bord', verificationConnexion.verifierConnexion, pageTableau
 app.use('/',pagePrincipale) // il faut laisser cette ligne en dernier dans les controllers
 
 
+//Erreur404
+app.use('*', (req, res) => {
+    res.render('erreur404')
+})
+
 //***** ecoute du port *****//
 app.listen(port, () => {
     console.log(`Vous êtes bien connecté sur le port ${port}, le ${new Date().toLocaleString()} `);

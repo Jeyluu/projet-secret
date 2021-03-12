@@ -228,8 +228,17 @@ footer{
     font-size: 20px;
 }
 
+.reseaux{
+    display: flex;
+    
+}
+
 .btn-social{
     color: #fff;
-    font-size: 40px;
-    margin: 20px 0;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.btn-social:hover{
+    color: #00a7bd;
 }
