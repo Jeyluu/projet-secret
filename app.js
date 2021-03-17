@@ -7,6 +7,8 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const MySQLsession = require('express-mysql-session');
 const fileUpload = require('express-fileupload');
+const swaggerJsDoc = require('swagger-jsdoc')
+const swaggerUI = require('swagger-ui-express')
 
 
 //***** port *****//
@@ -60,6 +62,22 @@ app.use(session({
         maxage: 1000 * 60 * 60 * 24 // le cookie dure 24heures
     }
 }))
+
+//***** swagger *****//
+const swaggerOptions = {
+    swaggerDefinition: {
+        info:{
+            title:"Documentation New'Z Gaming",
+            version:"1.0.0"
+        },
+    },
+    apis:['./routes/*.js']
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+console.log(swaggerDocs);
+app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDocs));
+
 
 //***** les messages flash d'erreurs ou d'alerte *****//
 app.use(flash())
