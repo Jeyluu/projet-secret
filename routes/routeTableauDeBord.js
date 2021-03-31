@@ -15,6 +15,61 @@ router.get('/',controllerTableauDeBord.getTableauDeBordPage)
 
 /** 
 * @swagger
+* /tableau-de-bord/ajouter-une-categorie:
+*  get:
+*   summary: Afficher la page ajouter une categorie
+*   responses:
+*       200:
+*          description: Affichage réussi !
+*/
+router.get('/ajouter-une-categorie', controllerTableauDeBord.getCategoriePage)
+
+/** 
+* @swagger
+* /tableau-de-bord/ajouter-une-categorie:
+*  get:
+*   summary: Ajout de la categorie
+*   responses:
+*       200:
+*          description: Affichage réussi !
+*/
+router.post('/ajouter-une-categorie',controllerTableauDeBord.postCategorie)
+
+/** 
+* @swagger
+* /tableau-de-bord/modifier-une-categorie:
+*  get:
+*   summary: Afficher la modification de la catégorie
+*   responses:
+*       200:
+*          description: Affichage réussi !
+*/
+router.get('/modifier-une-categorie/:id', controllerTableauDeBord.affichageCategorie)
+
+/** 
+* @swagger
+* /tableau-de-bord/modifier-une-categorie:
+*  get:
+*   summary: Modification de la catégorie
+*   responses:
+*       200:
+*          description: Affichage réussi !
+*/
+router.put('/modifier-une-categorie/:id', controllerTableauDeBord.modifierCategorie)
+
+/** 
+* @swagger
+* /tableau-de-bord/:id
+*  get:
+*   summary: Suppression de la catégorie
+*   responses:
+*       200:
+*          description: Affichage réussi !
+*/
+router.delete('/:id',controllerTableauDeBord.supressionCategorie)
+
+/** 
+* @swagger
 * /tableau-de-bord/ajouter-un-article:
 *  get:
 *   summary: Afficher la page ajouter un article

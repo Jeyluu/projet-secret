@@ -11,14 +11,14 @@
 
         <!-- FORMULAIRE D'AJOUT D'ARTICLE -->
 
-        <form action="/tableau-de-bord/modifier-un-article/<%= reprise.articleId %>?_method=PUT " method="POST"
+        <form action="/tableau-de-bord/modifier-une-categorie/<%= repriseDonneeCategorie.categorieId %>?_method=PUT " method="POST"
             enctype="multipart/form-data">
             <!-- TITRE -->
             <div class="row">
                 <div class=" col-md-6 mb-3 mt-3">
                     <div class="edit">
-                        <label class="form-label">titre de l'article</label>
-                    <input class="form-control" name="titre" value="<%=reprise.titre%>">
+                        <label class="form-label">Nom de la categorie</label>
+                    <input class="form-control" name="categorie" value="<%=repriseDonneeCategorie.categorie%>">
                     </div>
                     
                 </div>
@@ -38,7 +38,7 @@
                     <div class="apercu-img mb-3">
                         <div class="edit-image-actuelle">
                             <h4>Image actuelle</h4>
-                        <img src="/images/uploads/<%= reprise.image%> " alt="" style="width: 50%;">
+                        <img src="/images/uploads/<%= repriseDonneeCategorie.image%> " alt="" style="width: 50%;">
                         </div>
                         
                     </div>
@@ -47,58 +47,35 @@
 
 
 
-            <!-- CATEGORIE -->
-            <div class="row">
-                <div class="col-md-3">
-
-                    <div class="edit">
-                        <select name="categorieId">
-                        <option>Catégorie de l'article</option>
-                        <% categories.forEach(function(categorie) {%>
-                            <option value="<%=categorie.categorieId%>">
-                                <%=categorie.categorie%>
-                            </option>
-                            <%});%>
-                    </select>
-                    </div>
-                </div>
-            </div>
-
 
             <div class="row">
                 <div class="col-md-8">
                     <!-- CONTENU -->
                     <div class="edit">
-                        <label for="exampleFormControlTextarea1" class="form-label">Contenu de l'article</label>
+                        <label for="exampleFormControlTextarea1" class="form-label">Description de la catégorie</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
-                            name="contenu"><%=reprise.contenu%></textarea>
+                            name="description"><%=repriseDonneeCategorie.description%></textarea>
                     </div>
                 </div>
             </div>
-
 
             <div class="row">
-
-                <div class="col-md-3">
-                    <!-- AUTEUR -->
-                    <div class="edit">
-                        <select name="utilisateurId">
-                            <option>Choisir l'auteur</option>
-                            <% auteurs.forEach(function(auteur) {%>
-                                <option value="<%=auteur.utilisateurID%>">
-                                    <%=auteur.pseudo%>
-                                </option>
-                                <%});%>
-                        </select>
+                <div class="col-md-6">
+                    <!-- LIEN -->
+                    <div class="ajout-article">
+                        <label class="form-label">Lien</label>
+                        <input class="form-control" name="liens" value="<%=repriseDonneeCategorie.liens%>">
                     </div>
                 </div>
-
             </div>
+
+
+            
 
             <div class="row">
                 <div class="col-md-3">
                     <div class="bouton">
-                        <button type="submit" class="btn btn-primary">Publier</button>
+                        <button type="submit" class="btn btn-primary">Modifier</button>
                         <a href="/tableau-de-bord" class="btn btn-danger">Annuler sans sauvegarder</a>
                     </div>
                     

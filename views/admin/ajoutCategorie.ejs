@@ -1,0 +1,79 @@
+<%- include('partials-admin/header.ejs') %>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="ajout-article">
+                    <h1>Ajouter une catégorie</h1>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <!-- FORMULAIRE D'AJOUT D'ARTICLE -->
+            <form action="/tableau-de-bord/ajouter-une-categorie" method="POST" enctype="multipart/form-data">
+                <div class="col-md-6">
+                    <!-- TITRE -->
+                    <div class="ajout-article">
+                        <label class="form-label">Nom de la catégorie</label>
+                        <input class="form-control" name="categorie">
+                    </div>
+                </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <!-- IMAGE -->
+                <div class="ajout-article">
+                    <label for="formFile" class="form-label">Télécharger l'image</label>
+                    <input class="form-control" type="file" id="formFile" name="image">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <!-- CONTENU -->
+            <div class="col-md-8">
+                <div class="ajout-article">
+                    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+                        name="description"></textarea>
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <!-- LIEN -->
+                <div class="ajout-article">
+                    <label class="form-label">Lien</label>
+                    <input class="form-control" name="liens" placeholder="mettre le diminutif de la categorie">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="bouton">
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                    <a href="/tableau-de-bord"class="btn btn-danger"> Annuler sans sauvegarder</a>
+                </div>
+                
+                
+                </form>
+                
+            </div>
+        </div>
+
+
+    </div>
+
+    <%- include('partials-admin/footer.ejs') %>
